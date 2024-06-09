@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="darkBackground">#2C2D39</color>
+    <color name="lightText">#FFFFFF</color>
+    <color name="green">#1CC4B0</color>
+    <color name="inputBackground">#3B3C4A</color>
+    <color name="placeholderText">#888888</color>
+
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#4CAF50</color>
+
 </resources>

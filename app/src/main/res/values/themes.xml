@@ -1,9 +1,26 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ColdSwiftApps" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/darkBackground</item>
+        <item name="colorPrimaryDark">@color/darkBackground</item>
+        <item name="colorAccent">@color/green</item>
+        <item name="android:windowBackground">@color/darkBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/lightText</item>
+<!--        <item name="android:editTextBackground">@drawable/edit_text_background</item>-->
     </style>
 
-    <style name="Theme.ColdSwiftApps" parent="Base.Theme.ColdSwiftApps" />
+    <!-- Custom EditText style -->
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/inputBackground</item>
+        <item name="android:textColorHint">@color/placeholderText</item>
+        <item name="android:textColor">@color/lightText</item>
+    </style>
+
+    <!-- Custom Button style -->
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/buttonColor</item>
+        <item name="android:textColor">@color/lightText</item>
+    </style>
 </resources>
