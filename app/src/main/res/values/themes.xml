@@ -1,11 +1,11 @@
 <resources>
     <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here -->
         <item name="colorPrimary">@color/darkBackground</item>
         <item name="colorPrimaryDark">@color/darkBackground</item>
         <item name="colorAccent">@color/green</item>
-        <item name="android:windowBackground">@color/darkBackground</item>
+        <item name="android:windowBackground">@color/lightBackground</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/lightText</item>
 <!--        <item name="android:editTextBackground">@drawable/edit_text_background</item>-->
@@ -20,7 +20,7 @@
 
     <!-- Custom Button style -->
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:backgroundTint">@color/buttonColor</item>
+        <item name="android:backgroundTint">@color/green</item>
         <item name="android:textColor">@color/lightText</item>
     </style>
 </resources>

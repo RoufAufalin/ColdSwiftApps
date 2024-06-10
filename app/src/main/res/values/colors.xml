@@ -3,7 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="darkBackground">#2C2D39</color>
+    <color name="darkBackground">#212332</color>
+    <color name="lightBackground">#34374A</color>
     <color name="lightText">#FFFFFF</color>
     <color name="green">#1CC4B0</color>
     <color name="inputBackground">#3B3C4A</color>

@@ -13,20 +13,20 @@
             android:icon="@drawable/troli"
             android:title="@string/my_tickets" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_myprofile"
             android:icon="@drawable/profile"
             android:title="@string/my_profile" />
     </group>
 
-<!--    <item-->
-<!--        android:title="">-->
-<!--        <menu>-->
-<!--            <item-->
-<!--                android:id="@+id/nav_logout"-->
-<!--                android:icon="@drawable/baseline_logout_24"-->
-<!--                android:title="@string/log_out"/>-->
-<!--        </menu>-->
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/baseline_logout_24"
+                android:title="@string/log_out"/>
+        </menu>
 
 
-<!--    </item>-->
+    </item>
 </menu>

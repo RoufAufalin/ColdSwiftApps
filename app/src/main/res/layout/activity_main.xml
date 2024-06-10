@@ -15,22 +15,34 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:theme="?attr/actionBarTheme"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="56dp"
+            android:background="@drawable/toolbar_background"
+            android:elevation="4dp"
+            />
 
         <FrameLayout
-            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_container"/>
 
     </LinearLayout>
 
-    <include
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
         android:layout_gravity="start"
-        layout="@layout/nav_footer"/>
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
+
+<!--    <include-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        layout="@layout/nav_footer"/>-->
+
 </androidx.drawerlayout.widget.DrawerLayout>
