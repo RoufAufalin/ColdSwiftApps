@@ -12,4 +12,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="music">Music</string>
+    <string name="festival">Festival</string>
+    <string name="teater">Teater</string>
+    <string name="stand_up">Stand Up</string>
+    <string name="event">Taylor Swift: The Eras Tour</string>
+    <string name="std_gelora_bung_karno_jakarta">Std. Gelora Bung Karno Jakarta</string>
+    <string name="date">14</string>
+    <string name="june">August</string>
+    <string name="price">500K</string>
+    <string name="exhibition">Exhibition</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>
