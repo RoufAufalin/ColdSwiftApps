@@ -5,12 +5,99 @@
     android:layout_height="match_parent"
     tools:context=".view.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"/>
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_bold"
+        android:text= "@string/category"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/category_list"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/green" />
+
+    <HorizontalScrollView
+        android:id="@+id/category_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category"
+        android:layout_marginTop="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/music"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btn_festival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/festival"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btn_teater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/teater"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btn_stand_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/stand_up"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btn_exhibition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/exhibition"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        tools:listitem="@layout/event_list"/>
+
+
+
+
 
 </RelativeLayout>

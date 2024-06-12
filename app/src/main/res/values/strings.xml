@@ -8,8 +8,32 @@
     <string name="log_out">Log Out</string>
     <string name="rouf_aufalin_al_ghoitsal">Rouf Aufalin Al Ghoitsal</string>
     <string name="email">roufaufalinalghoitsal@gmail.com</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="music">Music</string>
+    <string name="festival">Festival</string>
+    <string name="teater">Teater</string>
+    <string name="stand_up">Stand Up</string>
+    <string name="event">Taylor Swift: The Eras Tour</string>
+    <string name="std_gelora_bung_karno_jakarta">Std. Gelora Bung Karno Jakarta</string>
+    <string name="date">14</string>
+    <string name="june">August</string>
+    <string name="price">500K</string>
+    <string name="exhibition">Exhibition</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="datee">14 Juni 2024</string>
+    <string name="error_password_length">Password must be at least 8 characters long</string>
+    <string name="email_error">Enter a valid email</string>
+    <string name="input_email">Enter Email</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="coldswift">ColdSwift</string>
+    <string name="login_copywriting">Log in to continue your easy and fast ticketing experience.</string>
+    <string name="login">Login</string>
+    <string name="email_address">Email Address</string>
+    <string name="input_password">Enter Password</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="enjoy_the_convenience_of_booking_tickets_at_your_fingertips">Enjoy the Convenience of Booking Tickets at Your Fingertips</string>
 </resources>
