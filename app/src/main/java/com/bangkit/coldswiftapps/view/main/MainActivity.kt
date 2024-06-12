@@ -2,14 +2,12 @@ package com.bangkit.coldswiftapps.view.main
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -24,16 +22,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawer: DrawerLayout
+    private lateinit var toolbarTitle: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-//        installSplashScreen()
         setContentView(binding.root)
 
         drawer = binding.drawerLayout
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+
+        toolbarTitle = binding.toolbar.findViewById(R.id.toolbar_title)
+        val typeface = ResourcesCompat.getFont(this, R.font.lato_bold)
+        toolbarTitle.typeface = typeface
 
         val navigationView = binding.navView
         navigationView.setNavigationItemSelectedListener(this)
@@ -45,17 +49,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         togle.syncState()
 
         if (savedInstanceState == null) {
-            replacedFragment(HomeFragment())
+            replacedFragment(HomeFragment(), getString(R.string.home))
             navigationView.setCheckedItem(R.id.nav_home)
         }
-
-
     }
 
-    private fun replacedFragment(fragment: Fragment){
+    private fun replacedFragment(fragment: Fragment, title: String) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
+        toolbarTitle.text = title
     }
 
     override fun onBackPressed() {
@@ -69,9 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.nav_home -> replacedFragment(HomeFragment())
-            R.id.nav_myticket -> replacedFragment(MyTicket())
-            R.id.nav_myprofile -> replacedFragment(MyProfile())
+            R.id.nav_home -> replacedFragment(HomeFragment(), getString(R.string.home))
+            R.id.nav_myticket -> replacedFragment(MyTicket(), getString(R.string.my_tickets))
+            R.id.nav_myprofile -> replacedFragment(MyProfile(), getString(R.string.my_profile))
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
