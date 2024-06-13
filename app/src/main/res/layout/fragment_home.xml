@@ -43,7 +43,8 @@
             <Button
                 android:id="@+id/btn_music"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
+                android:textSize="12sp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/music"
@@ -52,7 +53,8 @@
             <Button
                 android:id="@+id/btn_festival"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
+                android:textSize="12sp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/festival"
@@ -61,7 +63,8 @@
             <Button
                 android:id="@+id/btn_teater"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
+                android:textSize="12sp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/teater"
@@ -70,7 +73,8 @@
             <Button
                 android:id="@+id/btn_stand_up"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
+                android:textSize="12sp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/stand_up"

@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/green"
-            android:text="@string/register"
+            android:text="@string/login"
             android:layout_marginTop="32dp" />
 
 
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/darkBackground"
             android:background="@drawable/sec_btn"
-            android:text="@string/login" />
+            android:text="@string/register" />
 
 
 
