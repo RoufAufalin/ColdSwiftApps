@@ -1,4 +1,4 @@
-package com.bangkit.coldswiftapps.data.remote
+package com.bangkit.coldswiftapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 

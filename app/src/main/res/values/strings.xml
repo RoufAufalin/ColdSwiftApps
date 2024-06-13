@@ -52,4 +52,9 @@
     <string name="input_name">Enter Your Name</string>
     <string name="join_with_us">Join with us</string>
     <string name="regist_copywriting"><![CDATA[By signing up, you agree to our Terms & Conditions and Privacy Policy.]]></string>
+    <string name="face_verification_for_your_security_and_ease">Face Verification for Your Security and Ease</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="ktp_verification_for_your_security_and_ease">KTP Verification for Your Security and Ease</string>
+    <string name="pastikan_wajah_anda_di_tengah">Pastikan Wajah Anda di Tengah</string>
 </resources>

@@ -5,28 +5,55 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bangkit.coldswiftapps.R
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkit.coldswiftapps.adapter.EventAdapter
+import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
+import com.bangkit.coldswiftapps.databinding.FragmentHomeBinding
+import com.bangkit.coldswiftapps.view.ViewModelFactory
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var eventAdapter: EventAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val factory = ViewModelFactory.getInstance(requireContext())
+        homeViewModel = ViewModelProvider(this, factory).get(HomeViewModel::class.java)
+
+        homeViewModel.events.observe(viewLifecycleOwner, Observer { events ->
+            getEvents(events)
+        })
+
+
+        homeViewModel.getAllEvents()
+    }
+
+    private fun getEvents(listEvent: List<ListEventResponse>) {
+        eventAdapter = EventAdapter(listEvent)
+        binding.rvItemList.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = eventAdapter
+        }
+    }
+
+//    private fun showLoading(isLoading: Boolean) {
+//        if (isLoading) {
+//            binding.progressBar.visibility = View.VISIBLE
+//        } else {
+//            binding.progressBar.visibility = View.GONE
+//        }
+//    }
 }
