@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.coldswiftapps.data.EventRepository
 import com.bangkit.coldswiftapps.di.Injection
+import com.bangkit.coldswiftapps.view.detail.DetailViewModel
 import com.bangkit.coldswiftapps.view.home.HomeViewModel
 import com.bangkit.coldswiftapps.view.login.LoginViewModel
 import com.bangkit.coldswiftapps.view.main.MainViewModel
@@ -21,6 +22,9 @@ class ViewModelFactory(private val repository: EventRepository) : ViewModelProvi
             }
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+                DetailViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

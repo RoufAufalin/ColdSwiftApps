@@ -106,7 +106,7 @@
                     android:text="@string/password"
                     android:textSize="16sp" />
 
-                <com.dicoding.submissionstoryapproup.view.customview.PassEditText
+                <com.bangkit.coldswiftapps.view.customview.PassEditText
                     android:id="@+id/ed_login_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -13,6 +13,9 @@ import java.util.TimeZone
 
 class EventAdapter(private val events: List<ListEventResponse>) :
 RecyclerView.Adapter<EventAdapter.ViewHolder>(){
+
+    private var onItemClickCallback: OnItemClickCallback? = null
+
     class ViewHolder(var binding: EventListBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventAdapter.ViewHolder {
@@ -33,10 +36,23 @@ RecyclerView.Adapter<EventAdapter.ViewHolder>(){
             tvDate.text = DateFormatter.formatDateDay(event.eventDate!!)
             tvMonth.text = DateFormatter.formatMonthAbbreviation(event.eventDate)
             tvPrice.text = DateFormatter.formatPrice(event.price!!)
+
+
+            root.setOnClickListener {
+                onItemClickCallback?.onItemClicked(event)
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return events.size
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: ListEventResponse)
     }
 }

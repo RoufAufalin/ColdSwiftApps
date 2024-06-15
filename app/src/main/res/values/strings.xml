@@ -57,4 +57,8 @@
     <string name="confirmation">Confirmation</string>
     <string name="ktp_verification_for_your_security_and_ease">KTP Verification for Your Security and Ease</string>
     <string name="pastikan_wajah_anda_di_tengah">Pastikan Wajah Anda di Tengah</string>
+    <string name="confirm_purchase">Confirm Purchase!</string>
+    <string name="conifrmation_buy">Are you sure to purchase this ticket?</string>
+    <string name="yes">Yes</string>
+    <string name="no">Cancel</string>
 </resources>

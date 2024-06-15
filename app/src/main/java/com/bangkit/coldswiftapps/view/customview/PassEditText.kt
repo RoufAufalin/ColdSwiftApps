@@ -1,14 +1,10 @@
-package com.dicoding.submissionstoryapproup.view.customview
+package com.bangkit.coldswiftapps.view.customview
 
 import android.content.Context
-import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
 import com.bangkit.coldswiftapps.R
 
 class PassEditText @JvmOverloads constructor(

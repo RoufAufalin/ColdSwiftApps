@@ -2,6 +2,7 @@ package com.bangkit.coldswiftapps.utils
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import java.text.NumberFormat
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -26,10 +27,18 @@ object DateFormatter {
         return formatter.format(instant)
     }
 
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    fun formatDate(currentDateString: String?, targetTimeZone: String): String {
+//        val instant = Instant.parse(currentDateString)
+//        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy | HH:mm")
+//            .withZone(ZoneId.of(targetTimeZone))
+//        return formatter.format(instant)
+//    }
+
     @RequiresApi(Build.VERSION_CODES.O)
-    fun formatDate(currentDateString: String, targetTimeZone: String): String {
+    fun formatDate(currentDateString: String?, targetTimeZone: String): String {
         val instant = Instant.parse(currentDateString)
-        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy | HH:mm")
+        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
             .withZone(ZoneId.of(targetTimeZone))
         return formatter.format(instant)
     }
@@ -47,5 +56,11 @@ object DateFormatter {
             // Handle invalid number format gracefully
             return priceString
         }
+    }
+
+    fun formatCurrency(amount: Double): String {
+        val locale = Locale("id", "ID")
+        val currencyFormatter = NumberFormat.getCurrencyInstance(locale)
+        return currencyFormatter.format(amount).replace("Rp", "Rp.")
     }
 }
