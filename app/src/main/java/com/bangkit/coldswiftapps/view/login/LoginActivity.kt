@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.coldswiftapps.databinding.ActivityLoginBinding
@@ -32,8 +33,16 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             val email = binding.edLoginEmail.text.toString()
-            val password = binding.edLoginPass.text.toString()
+            val password = binding.edLoginPass.getText().toString()
             loginViewModel.login(email, password)
+        }
+
+        binding.btnLogin.doOnTextChanged { text, start, before, count ->
+            if(text!!.length > 8){
+                binding.textInputLayout.error = "Password must be at least 8 characters"
+            } else {
+                binding.textInputLayout.error = null
+            }
         }
 
         binding.btnRegister.setOnClickListener {

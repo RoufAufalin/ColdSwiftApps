@@ -12,9 +12,12 @@
     <color name="inputBackground">#3B3C4A</color>
     <color name="placeholderText">#888888</color>
 
+    <color name="transparent"> @android:color/transparent </color>
+
     <color name="colorPrimary">#009688</color>
     <color name="colorPrimaryDark">#00796B</color>
     <color name="colorAccent">#4CAF50</color>
+    <color name="red">#F44336</color>
 
 
 </resources>

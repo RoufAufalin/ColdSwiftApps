@@ -26,6 +26,7 @@ class LoginViewModel(private val repository: EventRepository): ViewModel() {
         repository.loginUser(email, password).observeForever { result ->
             _isLoading.value = false
             _loginResult.value = result
+            ViewModelFactory.resetInstance()
         }
     }
 

@@ -91,8 +91,9 @@
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/halfwhite"
                 android:hint="@string/input_nik"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:padding="12dp"
+
                 android:textColorHint="@color/halfwhite" />
         </LinearLayout>
 
@@ -122,7 +123,6 @@
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/halfwhite"
                 android:hint="@string/input_name"
-                android:inputType="textEmailAddress"
                 android:padding="12dp"
                 android:textColorHint="@color/halfwhite" />
         </LinearLayout>
@@ -183,7 +183,6 @@
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/halfwhite"
                 android:hint="@string/input_password"
-                android:inputType="textEmailAddress"
                 android:padding="12dp"
                 android:textColorHint="@color/halfwhite" />
         </LinearLayout>

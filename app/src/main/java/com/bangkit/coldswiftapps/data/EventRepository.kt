@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import com.bangkit.coldswiftapps.data.preference.UserModel
 import com.bangkit.coldswiftapps.data.preference.UserPreference
 import com.bangkit.coldswiftapps.data.remote.ApiService
+import com.bangkit.coldswiftapps.data.remote.response.AllTicketResponse
+import com.bangkit.coldswiftapps.data.remote.response.AllTicketResponseItem
 import com.bangkit.coldswiftapps.data.remote.response.BuyTiketResponse
 import com.bangkit.coldswiftapps.data.remote.response.DetailEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
@@ -105,30 +107,38 @@ class EventRepository(private val apiService: ApiService, private val userPrefer
         }
     }
 
-//    fun purchaseTicket(eventId: String): MutableLiveData<String?> {
-//        val result = MutableLiveData<String?>()
-//        val call = apiService.purchaseEvent(eventId)
-//        call.enqueue(object : Callback<BuyTiketResponse> {
-//            override fun onResponse(call: Call<BuyTiketResponse>, response: Response<BuyTiketResponse>) {
-//                if (response.isSuccessful && response.body() != null) {
-//                    val ticketResponse = response.body()
-//                    ticketResponse?.let {
-//                        if (it.message != null) {
-//                            result.postValue(it.message)
-//                        } else if (it.error != null) {
-//                            result.postValue(it.error)
-//                        }
-//                    }
-//                } else {
-//                    result.postValue("Gagal membeli tiket, coba lagi nanti.")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<BuyTiketResponse>, t: Throwable) {
-//                result.postValue("Gagal membeli tiket, periksa koneksi Anda.")
-//            }
-//        })
-//        return result
-//    }
+    fun getAllTickets(callback: (Result<List<AllTicketResponseItem>>) -> Unit){
+        apiService.getAllTicket().enqueue(object : Callback<List<AllTicketResponseItem>> {
+            override fun onResponse(
+                call: Call<List<AllTicketResponseItem>>,
+                response: Response<List<AllTicketResponseItem>>
+            ) {
+                if (response.isSuccessful) {
+                    val events = response.body()
+                    if (events != null) {
+                        callback(Result.success(events))
+                    } else {
+                        callback(Result.failure(Exception("Response body is null")))
+                    }
+                }
+                else {
+                    callback(Result.failure(Exception(response.message())))
+                }
+            }
+
+            override fun onFailure(call: Call<List<AllTicketResponseItem>>, t: Throwable) {
+                callback(Result.failure(t))
+            }
+        })
+    }
+
+    companion object {
+        @Volatile
+        private var instance: EventRepository? = null
+
+        fun refreshRepository() {
+            instance = null
+        }
+    }
 
 }

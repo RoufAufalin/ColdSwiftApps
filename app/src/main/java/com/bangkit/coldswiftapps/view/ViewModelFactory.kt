@@ -9,6 +9,7 @@ import com.bangkit.coldswiftapps.view.detail.DetailViewModel
 import com.bangkit.coldswiftapps.view.home.HomeViewModel
 import com.bangkit.coldswiftapps.view.login.LoginViewModel
 import com.bangkit.coldswiftapps.view.main.MainViewModel
+import com.bangkit.coldswiftapps.view.myticket.MyTicketViewModel
 
 class ViewModelFactory(private val repository: EventRepository) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
@@ -25,6 +26,10 @@ class ViewModelFactory(private val repository: EventRepository) : ViewModelProvi
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(MyTicketViewModel::class.java) -> {
+                MyTicketViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
@@ -44,6 +49,10 @@ class ViewModelFactory(private val repository: EventRepository) : ViewModelProvi
                 }
             }
             return INSTANCE as ViewModelFactory
+        }
+        fun resetInstance() {
+            INSTANCE = null
+            Injection.resetInstance()
         }
     }
 }

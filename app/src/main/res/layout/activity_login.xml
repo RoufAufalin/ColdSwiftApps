@@ -106,20 +106,36 @@
                     android:text="@string/password"
                     android:textSize="16sp" />
 
-                <com.bangkit.coldswiftapps.view.customview.PassEditText
-                    android:id="@+id/ed_login_pass"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/bg_ed"
-                    android:drawableStart="@drawable/baseline_lock_24"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/halfwhite"
+                    android:layout_height="match_parent"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/white"
+                    android:textColorHint="@color/halfwhite"
                     android:hint="@string/input_password"
-                    android:inputType="textEmailAddress"
-                    android:padding="16dp"
-                    android:textColorHint="@color/halfwhite" />
+                    app:hintEnabled="false"
+                    app:counterTextColor="@color/white"
+                    android:layout_marginTop="6dp"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@drawable/baseline_error_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_login_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ed"
+                        android:drawableStart="@drawable/baseline_lock_24"
+                        android:drawablePadding="8dp"
+                        android:hint="@string/input_password"
+                        android:drawableTint="@color/halfwhite"
+                        android:inputType="textPassword"
+                        android:padding="16dp"
+                        android:textColorHint="@color/halfwhite" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
 
             <Button

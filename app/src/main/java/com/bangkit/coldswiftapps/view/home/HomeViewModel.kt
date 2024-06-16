@@ -26,6 +26,8 @@ class HomeViewModel(private val repository: EventRepository) : ViewModel() {
             }
             result.onFailure { exception ->
                 // Handle failure (e.g., show error message)
+//                Result.failure(exception)
+
             }
         }
     }

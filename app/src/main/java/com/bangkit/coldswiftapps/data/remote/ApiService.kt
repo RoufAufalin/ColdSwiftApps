@@ -1,5 +1,7 @@
 package com.bangkit.coldswiftapps.data.remote
 
+import com.bangkit.coldswiftapps.data.remote.response.AllTicketResponse
+import com.bangkit.coldswiftapps.data.remote.response.AllTicketResponseItem
 import com.bangkit.coldswiftapps.data.remote.response.BuyTiketResponse
 import com.bangkit.coldswiftapps.data.remote.response.DetailEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
@@ -32,6 +34,9 @@ interface ApiService {
     suspend fun purchaseEvent(
         @Path("id") id: String,
     ): BuyTiketResponse
+
+    @GET("mytickets")
+    fun getAllTicket(): Call<List<AllTicketResponseItem>>
 
 
 
