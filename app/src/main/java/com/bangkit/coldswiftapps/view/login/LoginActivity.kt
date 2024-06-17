@@ -13,6 +13,7 @@ import com.bangkit.coldswiftapps.databinding.ActivityLoginBinding
 import com.bangkit.coldswiftapps.view.ViewModelFactory
 import com.bangkit.coldswiftapps.view.main.MainActivity
 import com.bangkit.coldswiftapps.view.register.RegisterActivity
+import com.bangkit.coldswiftapps.view.verif.FaceVerifActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -46,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, FaceVerifActivity::class.java)
             startActivity(intent)
         }
 

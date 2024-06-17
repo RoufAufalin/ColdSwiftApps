@@ -61,4 +61,9 @@
     <string name="conifrmation_buy">Are you sure to purchase this ticket?</string>
     <string name="yes">Yes</string>
     <string name="no">Cancel</string>
+    <string name="register_failed">Sorry, your registration failed!</string>
+    <string name="registration_successfull">Your Registration was Successful</string>
+    <string name="_3319061406030003">3319061406030003</string>
+    <string name="next">Next</string>
+    <string name="open_gallery">Open Gallery</string>
 </resources>

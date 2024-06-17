@@ -11,15 +11,19 @@ import com.bangkit.coldswiftapps.data.remote.response.BuyTiketResponse
 import com.bangkit.coldswiftapps.data.remote.response.DetailEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.LoginResponse
+import com.bangkit.coldswiftapps.data.remote.response.RegisterResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.HttpException
 import retrofit2.Response
+
 
 class EventRepository(private val apiService: ApiService, private val userPreference: UserPreference) {
 
@@ -130,6 +134,19 @@ class EventRepository(private val apiService: ApiService, private val userPrefer
                 callback(Result.failure(t))
             }
         })
+    }
+
+    suspend fun register (ktp: MultipartBody.Part, photo: MultipartBody.Part, email: RequestBody, password: RequestBody): Result<RegisterResponse>{
+        return try {
+            val response = apiService.register(ktp, photo, email, password)
+            Result.success(response)
+        } catch (e: HttpException){
+            val errorBody = e.response()?.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, RegisterResponse::class.java)
+            Result.failure(Exception(errorResponse.message))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 
     companion object {

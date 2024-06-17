@@ -36,7 +36,6 @@ class FaceVerifActivity : AppCompatActivity() {
         }
 
 
-
         binding.btnUpload.setOnClickListener {
             startCamera()
         }
@@ -47,6 +46,15 @@ class FaceVerifActivity : AppCompatActivity() {
 
         binding.btnRepeat.setOnClickListener {
             clearImage()
+        }
+
+        binding.btnConfirm.setOnClickListener{
+            currentImageUri?.let { uri ->
+                val intent = Intent(this, KTPVerifActivity::class.java).apply {
+                    putExtra(KTPVerifActivity.FACE_URI, uri.toString())
+                }
+                startActivity(intent)
+            }
         }
 
     }

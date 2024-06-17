@@ -3,11 +3,13 @@ package com.bangkit.coldswiftapps.view.camera
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
+import androidx.camera.core.CameraSelector
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.bangkit.coldswiftapps.R
@@ -31,6 +33,10 @@ class CameraActivity : AppCompatActivity() {
 
         binding.captureImage.setOnClickListener {
             takePicture()
+        }
+
+        binding.switchCamera.setOnClickListener {
+            switchCamera()
         }
     }
 
@@ -78,7 +84,12 @@ class CameraActivity : AppCompatActivity() {
             ContextCompat.getMainExecutor(this),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    cropImageToSquare(photoFile)
+
+                    if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) {
+                        cropImageToSquare(photoFile)
+                    } else {
+                        cropAndFlipImage(photoFile)
+                    }
 
                     val intent = Intent()
                     intent.putExtra(EXTRA_CAMERAX_IMAGE, photoFile.absolutePath)
@@ -114,6 +125,37 @@ class CameraActivity : AppCompatActivity() {
         croppedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream)
         outStream.flush()
         outStream.close()
+    }
+
+    private fun cropAndFlipImage(photoFile: File) {
+        val bitmap = BitmapFactory.decodeFile(photoFile.absolutePath)
+
+        val matrix = Matrix().apply {
+            postScale(-1f, 1f, bitmap.width / 2f, bitmap.height / 2f)
+        }
+
+        val flippedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+
+        // Crop the flipped image to a square
+        val dimension = minOf(flippedBitmap.width, flippedBitmap.height)
+        val xOffset = (flippedBitmap.width - dimension) / 2
+        val yOffset = (flippedBitmap.height - dimension) / 2
+        val croppedBitmap = Bitmap.createBitmap(flippedBitmap, xOffset, yOffset, dimension, dimension)
+
+        // Save the modified image back to the file
+        val outStream = FileOutputStream(photoFile)
+        croppedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream)
+        outStream.flush()
+        outStream.close()
+    }
+
+    private fun switchCamera() {
+        cameraSelector = if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) {
+            CameraSelector.DEFAULT_FRONT_CAMERA
+        } else {
+            CameraSelector.DEFAULT_BACK_CAMERA
+        }
+        startCamera()
     }
 
     companion object {

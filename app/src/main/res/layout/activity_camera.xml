@@ -9,6 +9,15 @@
     tools:context=".view.camera.CameraActivity">
 
 
+    <ImageView
+        android:id="@+id/switch_camera"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_cameraswitch_24"
+        app:layout_constraintBottom_toBottomOf="@+id/captureImage"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/captureImage"
+        app:layout_constraintTop_toTopOf="@+id/captureImage" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
