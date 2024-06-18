@@ -11,6 +11,7 @@ import com.bangkit.coldswiftapps.data.remote.response.BuyTiketResponse
 import com.bangkit.coldswiftapps.data.remote.response.DetailEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.LoginResponse
+import com.bangkit.coldswiftapps.data.remote.response.ProfileResponse
 import com.bangkit.coldswiftapps.data.remote.response.RegisterResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
@@ -147,6 +148,10 @@ class EventRepository(private val apiService: ApiService, private val userPrefer
         } catch (e: Exception) {
             Result.failure(e)
         }
+    }
+
+    suspend fun getProfile(): ProfileResponse {
+        return apiService.getProfile()
     }
 
     companion object {

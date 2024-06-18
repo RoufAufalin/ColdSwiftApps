@@ -6,6 +6,7 @@ import com.bangkit.coldswiftapps.data.remote.response.BuyTiketResponse
 import com.bangkit.coldswiftapps.data.remote.response.DetailEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.ListEventResponse
 import com.bangkit.coldswiftapps.data.remote.response.LoginResponse
+import com.bangkit.coldswiftapps.data.remote.response.ProfileResponse
 import com.bangkit.coldswiftapps.data.remote.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -51,5 +52,9 @@ interface ApiService {
         @Part("email") email: RequestBody,
         @Part("password") password: RequestBody,
     ) : RegisterResponse
+
+
+    @GET("api/users/profile")
+    suspend fun getProfile() : ProfileResponse
 
 }

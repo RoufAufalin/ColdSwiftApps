@@ -29,6 +29,7 @@ class SuccessActivity : AppCompatActivity() {
         binding.btnNext.setOnClickListener {
             val intent = Intent(this@SuccessActivity, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
@@ -58,9 +60,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         togle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.white)
         togle.syncState()
 
+
         if (savedInstanceState == null) {
             replacedFragment(HomeFragment(), getString(R.string.home))
             navigationView.setCheckedItem(R.id.nav_home)
+        }
+
+        val headerView = navigationView.getHeaderView(0)
+        val headerName = headerView.findViewById<TextView>(R.id.username)
+        val headerEmail = headerView.findViewById<TextView>(R.id.user_email)
+
+        mainViewModel.getProfile()
+
+        mainViewModel.profile.observe(this){profile ->
+            if(profile != null){
+                headerName.text = profile.name
+                headerEmail.text = profile.email
+            }
+        }
+
+        mainViewModel.error.observe(this) {error ->
+            showToast(error.toString())
         }
     }
 
@@ -95,5 +115,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

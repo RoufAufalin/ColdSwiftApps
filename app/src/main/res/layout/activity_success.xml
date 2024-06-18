@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/lato_bold"
-                android:text="@string/nik"
+                android:text="@string/emailrek"
                 android:textSize="16sp" />
 
             <TextView

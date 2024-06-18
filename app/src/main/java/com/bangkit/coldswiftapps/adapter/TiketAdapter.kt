@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.coldswiftapps.data.remote.response.AllTicketResponseItem
 import com.bangkit.coldswiftapps.databinding.TiketItemBinding
 import com.bangkit.coldswiftapps.utils.DateFormatter
+import com.bumptech.glide.Glide
 import java.util.TimeZone
 
 class TiketAdapter(var tickets: List<AllTicketResponseItem?>?) :
@@ -22,9 +23,12 @@ RecyclerView.Adapter<TiketAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: TiketAdapter.ViewHolder, position: Int) {
         val tickets = tickets?.get(position)
         with(holder.binding){
-            tvEventName.text = tickets?.eventId.toString()
-            tvVenue.text = tickets?.userName
-            date.text= DateFormatter.formatDate(tickets?.purchasedAt!!,  TimeZone.getDefault().id)
+            tvEventName.text = tickets?.eventName
+            tvVenue.text = tickets?.eventLocation
+            date.text= DateFormatter.formatDate(tickets?.eventDate!!,  TimeZone.getDefault().id)
+            Glide.with(holder.itemView.context)
+                .load(tickets.eventImageURL)
+                .into(ivTiket)
         }
     }
 

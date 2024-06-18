@@ -16,8 +16,8 @@ data class DetailEventResponse(
 	@field:SerializedName("eventCategory")
 	val eventCategory: String? = null,
 
-	@field:SerializedName("organizer")
-	val organizer: String? = null,
+	@field:SerializedName("vendor")
+	val vendor: String? = null,
 
 	@field:SerializedName("eventLocation")
 	val eventLocation: String? = null,

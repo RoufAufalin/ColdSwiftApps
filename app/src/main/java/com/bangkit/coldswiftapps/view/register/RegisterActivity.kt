@@ -54,7 +54,6 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.registerResult.observe(this) { result ->
             showLoading(false)
             result.onSuccess {
-                showToast(it.message)
                 setResult(RESULT_OK)
                 val intent = Intent(this, SuccessActivity::class.java)
                 intent.putExtra("userName", it.name)

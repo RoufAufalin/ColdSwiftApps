@@ -9,6 +9,7 @@ import com.bangkit.coldswiftapps.view.detail.DetailViewModel
 import com.bangkit.coldswiftapps.view.home.HomeViewModel
 import com.bangkit.coldswiftapps.view.login.LoginViewModel
 import com.bangkit.coldswiftapps.view.main.MainViewModel
+import com.bangkit.coldswiftapps.view.myprofile.MyProfileViewModel
 import com.bangkit.coldswiftapps.view.myticket.MyTicketViewModel
 import com.bangkit.coldswiftapps.view.register.RegisterViewModel
 
@@ -35,6 +36,10 @@ class ViewModelFactory(private val repository: EventRepository) : ViewModelProvi
 
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
                 RegisterViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(MyProfileViewModel::class.java) -> {
+                MyProfileViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

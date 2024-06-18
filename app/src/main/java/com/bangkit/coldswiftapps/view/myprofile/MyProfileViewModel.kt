@@ -1,4 +1,4 @@
-package com.bangkit.coldswiftapps.view.main
+package com.bangkit.coldswiftapps.view.myprofile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,19 +8,13 @@ import com.bangkit.coldswiftapps.data.EventRepository
 import com.bangkit.coldswiftapps.data.remote.response.ProfileResponse
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: EventRepository) : ViewModel() {
+class MyProfileViewModel(private val repository: EventRepository) : ViewModel() {
 
     private val _profile = MutableLiveData<ProfileResponse>()
     val profile: LiveData<ProfileResponse> get() = _profile
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
-
-    fun logout(){
-        viewModelScope.launch {
-            repository.logoutUser()
-        }
-    }
 
     fun getProfile(){
         viewModelScope.launch {
@@ -32,4 +26,5 @@ class MainViewModel(private val repository: EventRepository) : ViewModel() {
             }
         }
     }
+
 }

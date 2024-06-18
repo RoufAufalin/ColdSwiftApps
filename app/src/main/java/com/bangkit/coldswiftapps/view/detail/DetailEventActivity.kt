@@ -127,7 +127,7 @@ class DetailEventActivity : AppCompatActivity() {
                 .load(event.eventImageURL)
                 .into(ivImage)
             tvEventName.text = event.eventName
-            eventOrganizer.text = event.organizer
+            eventOrganizer.text = event.vendor
             tvPrice.text = DateFormatter.formatCurrency(event.price!!.toDouble())
             tvDate.text = DateFormatter.formatDate(event.eventDate, TimeZone.getDefault().id)
             tvLocation.text = event.eventLocation
