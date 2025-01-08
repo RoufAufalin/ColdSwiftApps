@@ -1,7 +1,5 @@
 # ColdSwiftApps
 
-![ColdSwiftApps Banner](https://github.com/user-attachments/assets/4174e0f0-d9df-49b5-b7de-db953289ba81){:width="100%"}
-
 ColdSwift adalah aplikasi penjualan tiket online yang dirancang untuk memberikan pengalaman pengguna yang cepat, aman, dan modern. Aplikasi ini merupakan hasil dari proyek capstone Bangkit Academy 2024 Batch 1 pada jalur Android Development.
 
 ---
@@ -26,20 +24,15 @@ ColdSwift adalah aplikasi penjualan tiket online yang dirancang untuk memberikan
 
 Berikut adalah beberapa tampilan antarmuka aplikasi ColdSwift:
 
-### **Halaman Utama**
-![Home Page](https://github.com/user-attachments/assets/5d085873-56ce-47df-b320-877acb00915d){:width="100%"}
-
-### **Proses Pembelian Tiket**
-![Purchase Flow](https://github.com/user-attachments/assets/bc3429ad-97ac-43e5-9fe4-ff2294b3aa9b){:width="100%"}
-
-### **Fitur Face Recognition**
-![Face Recognition](https://github.com/user-attachments/assets/51faadb3-c685-4088-af34-4bb16423be7f){:width="100%"}
-
-### **Fitur OCR**
-![OCR Feature](https://github.com/user-attachments/assets/664331db-3365-4793-b111-75751eec7464){:width="100%"}
-
-### **Profil Pengguna**
-![User Profile](https://github.com/user-attachments/assets/d9685e0d-46ed-4200-a989-936e34cfedf1){:width="100%"}
+![image001](https://github.com/user-attachments/assets/b582c682-a42f-49af-b79d-74b1a92c97f4)
+![image003](https://github.com/user-attachments/assets/604c52f8-244b-4bf9-9b20-f0902a50b05e)
+![image005](https://github.com/user-attachments/assets/b564c28a-2665-462e-8b1f-9020506ac2d3)
+![image007](https://github.com/user-attachments/assets/c5d5110e-fd2c-4662-a1fa-8c15dbcd0dd8)
+![image009](https://github.com/user-attachments/assets/32010556-f314-48ea-aafc-3b6e4e6b10ec)
+![image011](https://github.com/user-attachments/assets/68dca700-5a64-42d5-93be-daed6f15b31c)
+![image013](https://github.com/user-attachments/assets/f02ac9e4-622f-41d2-9e87-fc98ac96948c)
+![image015](https://github.com/user-attachments/assets/c2f703e9-dd8f-4f9f-ae8b-acb4a2d36957)
+![image017](https://github.com/user-attachments/assets/38c18d6b-1dc1-4c6a-b03e-d9b9d23ee249)
 
 ---
 
