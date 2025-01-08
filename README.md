@@ -1,6 +1,6 @@
 # ColdSwiftApps
 
-![ColdSwiftApps Banner](https://github.com/user-attachments/assets/4174e0f0-d9df-49b5-b7de-db953289ba81)
+![ColdSwiftApps Banner](https://github.com/user-attachments/assets/4174e0f0-d9df-49b5-b7de-db953289ba81){:width="100%"}
 
 ColdSwift adalah aplikasi penjualan tiket online yang dirancang untuk memberikan pengalaman pengguna yang cepat, aman, dan modern. Aplikasi ini merupakan hasil dari proyek capstone Bangkit Academy 2024 Batch 1 pada jalur Android Development.
 
@@ -27,19 +27,19 @@ ColdSwift adalah aplikasi penjualan tiket online yang dirancang untuk memberikan
 Berikut adalah beberapa tampilan antarmuka aplikasi ColdSwift:
 
 ### **Halaman Utama**
-![Home Page](https://github.com/user-attachments/assets/5d085873-56ce-47df-b320-877acb00915d)
+![Home Page](https://github.com/user-attachments/assets/5d085873-56ce-47df-b320-877acb00915d){:width="100%"}
 
 ### **Proses Pembelian Tiket**
-![Purchase Flow](https://github.com/user-attachments/assets/bc3429ad-97ac-43e5-9fe4-ff2294b3aa9b)
+![Purchase Flow](https://github.com/user-attachments/assets/bc3429ad-97ac-43e5-9fe4-ff2294b3aa9b){:width="100%"}
 
 ### **Fitur Face Recognition**
-![Face Recognition](https://github.com/user-attachments/assets/51faadb3-c685-4088-af34-4bb16423be7f)
+![Face Recognition](https://github.com/user-attachments/assets/51faadb3-c685-4088-af34-4bb16423be7f){:width="100%"}
 
 ### **Fitur OCR**
-![OCR Feature](https://github.com/user-attachments/assets/664331db-3365-4793-b111-75751eec7464)
+![OCR Feature](https://github.com/user-attachments/assets/664331db-3365-4793-b111-75751eec7464){:width="100%"}
 
 ### **Profil Pengguna**
-![User Profile](https://github.com/user-attachments/assets/d9685e0d-46ed-4200-a989-936e34cfedf1)
+![User Profile](https://github.com/user-attachments/assets/d9685e0d-46ed-4200-a989-936e34cfedf1){:width="100%"}
 
 ---
 
@@ -52,7 +52,22 @@ Berikut adalah beberapa tampilan antarmuka aplikasi ColdSwift:
 
 ---
 
+## **Cara Instalasi**
 
+1. Clone repositori ini ke komputer Anda:
+   ```bash
+   git clone https://github.com/username/coldswiftapps.git
+   ```
+
+2. Buka proyek menggunakan Android Studio.
+
+3. Pastikan Anda sudah menginstal:
+   - Android Studio Arctic Fox atau versi lebih baru.
+   - Versi JDK yang kompatibel.
+
+4. Jalankan aplikasi di emulator atau perangkat fisik.
+
+---
 
 Terima kasih telah mengunjungi repositori ColdSwiftApps! 🚀
 
